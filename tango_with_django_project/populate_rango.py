@@ -1,4 +1,6 @@
 import os
+import random
+from unicodedata import category
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                       'tango_with_django_project.settings')
 
@@ -54,12 +56,13 @@ def populate():
             print(f'- {c}: {p}')
 
 
-def add_page(cat, title, url, views=0):
+def add_page(cat, title, url):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
     p.url = url
-    p.views = views
+    p.views = random.randint(0, 33)
     p.save()
     return p
+
 
 
 def add_cat(name):
