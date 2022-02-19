@@ -12,23 +12,26 @@
             <strong>{{ boldmessage }}</strong>
         </div>
 
+        <div>
+            <a href="/rango/add_category/">Add a New Category</a><br />
+        </div>
 
 
         <div>
-        {% if categories %}
-            <ul>
-            {% for category in categories %}
-            <!-- The following line is changed to add an HTML hyperlink -->
-            <li>
-                <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
-            </li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <strong>There are no categories present.</strong>
-        {% endif %}
+            <h2>Most Liked Categories</h2>
+            {% if categories %}
+                <ul>
+                {% for category in categories %}
+                <!-- The following line is changed to add an HTML hyperlink -->
+                <li>
+                    <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
+                </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <strong>There are no categories present.</strong>
+            {% endif %}
         </div>
-
 
 
         <div>
@@ -44,19 +47,6 @@
             {% endif %}
         </div>
 
-        <div>
-            <h2>Most Liked Categories</h2>
-            {% if categories %}
-            <u1>
-            {% for category in categories %}
-            <li><a href="//rango/category/{{category.slug}}">{{category.name}}</a></li>
-            {% endfor %}
-            </u1>
-            {% else %}
-                <strong>There are no categories present.</strong>
-            {% endif %}
-        </div>
-
 
 
 
@@ -66,6 +56,8 @@
             <img src="{% static "images/rango.jpg" %}"
                 alt="Picture of Rango" />
         </div>
+
+        
     </body>
 
 
