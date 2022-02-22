@@ -1,13 +1,11 @@
 from django.contrib import admin
-
-# Register your models here.
+from rango.models import UserProfile
 from django.contrib import admin
 from rango.models import Category,Page
 
 class PageAdmin(admin.ModelAdmin):
     list_display = ('title','category','url')
 class CategoryAdmin(admin.ModelAdmin):
-    # list_display = ('name','views','likes')
     prepopulated_fields = {'slug':('name',)}
 
   
